@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i-GOV Feedback Survey | Enhanced</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+  <div id="privacy-screen">
+    <div class="privacy-box">
+      <h2>Data Privacy Notice</h2>
+      <p>
+        This form is compliant with the <b>Philippines Data Privacy Act of 2012 (RA 10173)</b>.<br /><br />
+        All information collected through this survey is intended solely for the purpose of improving public service delivery. Your responses will be treated with the utmost confidentiality.
+No personally identifiable information (PII) will be shared, published, or disclosed without your explicit consent. By proceeding with this form, you voluntarily and knowingly agree to the collection and use of your data for the stated purpose.
+      </p>
+    </div>
+    <label for="agree">
+      <input type="checkbox" id="agree" /> I have read and agree to the privacy policy.
+    </label>
+    <button id="continue-btn" disabled>Continue to Survey</button>
+  </div>
+
+  <div id="thank-you-screen">
+    <div class="thank-you-box">
+      <h2>🎉 Thank You!</h2>
+      <p>Your response has been successfully submitted.</p>
+      <button id="edit-response-btn">Edit your response</button>
+    </div>
+  </div>
+
+  <div id="form-wrapper" style="display: none;">
+    <div class="container">
+        <div class="form-header">
+            <h1 class="form-title">HELP US SERVE YOU BETTER!</h1>
+            <p class="form-description">
+                This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices.
+                Your feedback on your recently concluded transaction will help this office provide a better service.
+                Personal information is confidential, and you may choose not to answer this form.
+            </p>
+        </div>
+
+        <form id="feedback-form">
+            <div class="form-section">
+                <h2 class="section-title">Your Information</h2>
+                <div class="grid-layout">
+                    <div class="question-box">
+                        <label for="client-type">Client Type:</label>
+                        <select id="client-type" name="clientType" required>
+                            <option value="" disabled selected>Select your type...</option>
+                            <option value="Citizen">Citizen</option>
+                            <option value="Business">Business</option>
+                            <option value="Government">Government</option>
+                        </select>
+                    </div>
+                    <div class="question-box">
+                        <label for="experience-date">Date of Transaction:</label>
+                        <input type="date" id="experience-date" name="experienceDate" required>
+                    </div>
+                    <div class="question-box">
+                        <label for="Gender">Gender:</label>
+                        <select id="Gender" name="sex" required>
+                            <option value="" disabled selected>Select your Gender...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="question-box">
+                       <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="0" placeholder="Enter your age" required>
+                    </div>
+                    <div class="question-box">
+                        <label for="barangay">Your Barangay in Naga City:</label>
+                        <select id="barangay" name="barangay" required>
+                            <option value="" disabled selected>Select your barangay...</option>
+                            <option value="Abella">Abella</option>
+                            <option value="Bagumbayan Norte">Bagumbayan Norte</option>
+                            <option value="Bagumbayan Sur">Bagumbayan Sur</option>
+                            <option value="Balatas">Balatas</option>
+                            <option value="Calauag">Calauag</option>
+                            <option value="Cararayan">Cararayan</option>
+                            <option value="Carolina">Carolina</option>
+                            <option value="Concepcion Grande">Concepcion Grande</option>
+                            <option value="Concepcion Pequeña">Concepcion Pequeña</option>
+                            <option value="Dayangdang">Dayangdang</option>
+                            <option value="Del Rosario">Del Rosario</option>
+                            <option value="Dinaga">Dinaga</option>
+                            <option value="Igualdad Interior">Igualdad Interior</option>
+                            <option value="Lerma">Lerma</option>
+                            <option value="Liboton">Liboton</option>
+                            <option value="Mabolo">Mabolo</option>
+                            <option value="Pacol">Pacol</option>
+                            <option value="Panicuason">Panicuason</option>
+                            <option value="Peñafrancia">Peñafrancia</option>
+                            <option value="Sabang">Sabang</option>
+                            <option value="San Felipe">San Felipe</option>
+                            <option value="San Francisco (Poblacion)">San Francisco (Poblacion)</option>
+                            <option value="San Isidro">San Isidro</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Tabuco">Tabuco</option>
+                            <option value="Tinago">Tinago</option>
+                            <option value="Triangulo">Triangulo</option>
+                        </select>
+                    </div>
+                    <div class="question-box">
+                        <label for="office">Office:</label>
+                        <input type="text" id="office" name="office" placeholder="Enter office name" required>
+                    </div>
+                    <div class="question-box full-width">
+                        <label for="service-availed">Service Availed:</label>
+                        <input type="text" id="service-availed" name="serviceAvailed" placeholder="Enter service availed" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2 class="section-title">Citizen's Charter (CC)</h2>
+                <div class="instructions-box">INSTRUCTIONS: Check mark (✅) your answer to the Citizen's Charter (CC) questions. The Citizen's Charter
+is an official document that reflects the services of a government agency/office including its requirements, fees,
+and processing times among others.
+</div>
+
+                <div class="instructions-box">
+                    <label>1. Which of the following best describes your awareness of a CC?</label>
+                </div>
+                    <div class="radio-group">
+                        <label><input type="checkbox" name="cc1" value="I know what a CC is and I saw this office's CC."> I know what a CC is and I saw this office's CC.</label>
+                        <label><input type="checkbox" name="cc1" value="I know what a CC is but I did NOT see this office's CC."> I know what a CC is but I did NOT see this office's CC.</label>
+                        <label><input type="checkbox" name="cc1" value="I learned of the CC only when I saw this office's CC."> I learned of the CC only when I saw this office's CC.</label>
+                        <label><input type="checkbox" name="cc1" value="I do not know what a CC is and I did not see one."> I do not know what a CC is and I did not see one.</label>
+                    </div>
+
+
+                <div class="instructions-box">
+                    <label>2. Would you say that the CC of this office was...?</label>
+                </div>
+                    <div class="radio-group">
+                        <label><input type="checkbox" name="cc2" value="1. Easy to see">1. Easy to see</label>
+                        <label><input type="checkbox" name="cc2" value="2. Somewhat easy to see">2. Somewhat easy to see</label>
+                        <label><input type="checkbox" name="cc2" value="3. Difficult to see">3. Difficult to see</label>
+                        <label><input type="checkbox" name="cc2" value="4. Not visible at all">4. Not visible at all</label>
+                        <label><input type="checkbox" name="cc2" value="5. N/A">5. N/A</label>
+                    </div>
+
+
+                <div class="instructions-box">
+                    <label>3. How much did the CC help you in your transaction?</label>
+                </div>
+                    <div class="radio-group">
+                        <label><input type="checkbox" name="cc3" value="1. Helped very much">1. Helped very much</label>
+                        <label><input type="checkbox" name="cc3" value="2. Somewhat helped">2. Somewhat helped</label>
+                        <label><input type="checkbox" name="cc3" value="3. Did not help.">3. Did not help.</label>
+                    </div>
+
+            </div>
+
+            <div class="form-section">
+                <h2 class="section-title">Service Quality Feedback</h2>
+                <div class="instructions-box">Instruction: Please rate your satisfaction with the following aspects of the service you received.</div>
+
+                <div class="instructions-box">
+                    <label>SQD0. I am satisfied with the service that I availed.</label>
+                </div>
+                    <div class="sqd-options">
+                        <label><input type="radio" name="sqd0" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd0" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd0" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd0" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd0" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd0" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+
+                <div class="instructions-box">
+                    <label>SQD1. I spent a reasonable amount of time for my transaction.</label>
+                </div>
+                    <div class="sqd-options">
+                        <label><input type="radio" name="sqd1" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd1" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd1" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd1" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd1" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd1" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                    
+
+                <div class="instructions-box">
+                    <label>SQD2. The office followed the transaction's requirements and steps based on the information provided.</label>
+                </div>
+                    <div class="sqd-options">
+                        <label><input type="radio" name="sqd2" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd2" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd2" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd2" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd2" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd2" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+
+                <div class="instructions-box">
+                    <label>SQD3. The steps (including payment) I needed to do for my transaction were easy and simple.</label>
+                </div>
+                    <div class="sqd-options">
+                        <label><input type="radio" name="sqd3" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd3" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd3" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd3" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd3" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd3" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+
+                <div class="instructions-box">
+                    <label>SQD4. I easily found information about my transaction from the office or its website.</label>
+                </div>
+                    <div class="sqd-options">
+                        <label><input type="radio" name="sqd4" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd4" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd4" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd4" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd4" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd4" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+
+                <div class="instructions-box">
+                    <label>SQD5. I paid a reasonable amount of fees for my transaction.</label>
+                </div>
+                    <div class="sqd-options">
+                        <label><input type="radio" name="sqd5" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd5" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd5" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd5" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd5" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd5" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+
+                   <div class="instructions-box">
+                    <label>SQD6. I feel the office was fair to everyone, or "walang palakasan", during my transaction.</label>
+                </div>
+                        <div class="sqd-options">
+                        <label><input type="radio" name="sqd6" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd6" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd6" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd6" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd6" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd6" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+
+                <div class="instructions-box">
+                    <label>SQD7. I was treated courteously by the staff, and (if asked for help) the staff was helpful.</label>
+                </div>
+                        <div class="sqd-options">
+                        <label><input type="radio" name="sqd7" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd7" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd7" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd7" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd7" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd7" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+
+                <div class="instructions-box">
+                    <label>SQD8. I got what I needed from the government office, or (if denied) the denial of my request was sufficiently explained to me.</label>
+                </div>
+                        <div class="sqd-options">
+                        <label><input type="radio" name="sqd8" value="1" required><span>😠<br>Strongly Disagree</span></label>
+                        <label><input type="radio" name="sqd8" value="2"><span>🙁<br>Disagree</span></label>
+                        <label><input type="radio" name="sqd8" value="3"><span>😐<br>Neutral</span></label>
+                        <label><input type="radio" name="sqd8" value="4"><span>🙂<br>Agree</span></label>
+                        <label><input type="radio" name="sqd8" value="5"><span>😍<br>Strongly Agree</span></label>
+                        <label><input type="radio" name="sqd8" value="N/A"><span>🤷<br>Not Applicable</span></label>
+                    </div>
+                
+            </div>
+
+            <div class="form-section">
+                <h2 class="section-title">Final Thoughts</h2>
+                <div class="question-box">
+                    <label for="suggestions">Suggestions / Comments (Optional):</label>
+                    <textarea id="suggestions" name="suggestions" rows="5" placeholder="What can we do better? Is there anyone you'd like to commend?"></textarea>
+                </div>
+                <div class="question-box">
+                    <label for="email">Email Address (Optional):</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                </div>
+            </div>
+
+            <input id="submit-button" type="submit" value="Submit Feedback">
+        </form>
+    </div>
+  </div>
+
+  <script src="survey.js"></script>
+</body>
+</html>
